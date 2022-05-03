@@ -1,0 +1,82 @@
+
+    html,
+    body {
+        padding: 0px;
+        margin: 0px;
+        font-family: sans-serif ;
+    }
+
+    #container_signIn {
+        width: 100%;
+        height: 750px;
+        background: url("https://ichef.bbci.co.uk/images/ic/800xn/p092shyv.jpg") no-repeat;
+        background-size: cover;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+
+    .logo {
+        width: 15%;
+        height: 30px;
+    }
+
+    .signIn_content {
+        width: 33%;
+        /* height: 550px; */
+        background: white;
+        margin-left: 190px;
+        padding: 2%;
+    }
+
+    #form {
+        font-size: 20px;
+    }
+   .terms{
+       margin: 0px;
+       padding: 0px;
+       margin-top: 20px;
+       font-size: 12px;
+   }
+   #rules{
+       font-size: 12px;
+   }
+    #form>input,#input >label {
+        background: transparent;
+        border: none !important;
+        width: 90%;
+        height: 50px;
+        border-bottom: 1px solid #000000 !important;
+        font-size: 20px;
+        margin-bottom: 0px;
+        margin-top: 2px;
+    }
+    
+    #form > button{
+        align-items: center;
+        text-align: center;
+        background:  rgb(1, 109,238);
+        width: 91%;
+        height: 50px;
+        margin-top: 20px;
+        font-size: 20px;
+        border: none;
+        color: white;
+    }
+    
+    #footer{
+        background-color: rgb(76, 76,76);
+        color: #ffffff;
+        padding: 12px;
+        height: 30px;
+    }
+    #footer>p{
+        margin: 0px;
+        padding: 0px;
+        float: left;
+        margin-left: 300px;
+    }
+    #footer a{
+        text-decoration: none;
+        border: none;
+        color: white !important;
+    }

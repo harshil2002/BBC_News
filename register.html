@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://logos-download.com/wp-content/uploads/2016/06/BBC_logo_black_background.png">
+    <title>BBC - Register</title>
+    <link rel="stylesheet" href="./register.css">
+</head>
+<body>
+    <div id="container_signIn">
+        <div><br><br><br></div>
+        <div class="signIn_content">
+            <!-- <img class="logo" src="https://logos-download.com/wp-content/uploads/2016/06/BBC_logo_black_background.png"> -->
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/BBC.svg/1280px-BBC.svg.png">
+            <p>Register with the BBC</p>
+            <h1><strong>Let's start. This account is for someone who is...</strong></h1>
+            <div id="divBtn">
+                <button id="under"><strong>Under 16</strong></button>
+                <button id="above"><strong>16 or over</strong></button>
+            </div>
+            <p class="more">What's this for?<button id="more" >&#8964;</button></p>
+            <p id="hiddenContent">This is so you get access to the right content for your age.</p>
+        </div>
+    </div>
+    <div id="footer">
+        <p class="content">Already Got a BBC account?<a href="./signup.html"><strong>Sign In</strong></a></p>
+        <p>Find out more about BBC accounts</p>
+    </div>
+    <script type="text/javascript">
+    window.addEventListener("load",function(){
+        let btn = document.getElementById("more")
+        btn.addEventListener("mouseover",showContent)
+        btn.addEventListener("mouseout",hideContent)
+        let underBtn = document.getElementById("under");
+        underBtn.addEventListener("click", underFn)
+        let aboveBtn = document.getElementById("above");
+        aboveBtn.addEventListener("click",aboveFn)
+    })
+        let showContent = ()=>{
+            let content = document.getElementById("hiddenContent")
+            content.style.display = "block";
+        }
+        let hideContent = ()=>{
+            let content = document.getElementById("hiddenContent")
+            content.style.display = "none";
+        }
+        let underFn = ()=>{
+            location.replace("./under.html")
+        }
+        let aboveFn = ()=>{
+            location.replace("./above.html")
+        }
+    </script>
+</body>
+</html>

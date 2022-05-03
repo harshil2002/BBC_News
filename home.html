@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBC - Homepage</title>
+    <link rel="icon" type="image/png" href="https://logos-download.com/wp-content/uploads/2016/06/BBC_logo_black_background.png">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+    <div id="outer_navbar">
+    </div>
+    <div id="cont">
+
+
+        <div class="welcome_date">
+            <h3>Welcome to BBC.com</h3>
+            <div></div>
+            <p id="date"></p>
+        </div>
+        <div id="container_1">
+
+        </div>
+        <h3 id="news_section">News</h3>
+        <div id="container_2">
+
+        </div>
+        <h3 id="sport_section">Sport</h3>
+        <div id="container_3">
+
+        </div>
+        <div id="weather">
+            <h4 style="padding: 0px; margin: 4px;">Live Weather Update</h4>
+            <input type="search" name="weather" placeholder="Search City">
+            <button id="weatherButton">Click</button>
+            <div id="weatherResults">
+
+            </div>
+        </div>
+        <div id="reel">
+            <h4 style="font-size: 22px;">REEL</h4>
+            <p>The Most Amazing News From BBC</p>
+            <div id="reel_content"></div>
+        </div>
+        <h3 id="india_section">India News</h3>
+        <div id="container_4">
+
+        </div>
+
+        <div id="science">
+            <h4 style="font-size: 22px;">FUTURE PLANET</h4>
+            <p>Sustainable planet</p>
+            <div id="science_content"></div>
+        </div>
+        <h3 id="health_section">Health News</h3>
+        <div id="container_5">
+
+        </div>
+        <h3 id="tech_section">Technology News</h3>
+        <div id="container_6">
+
+        </div>
+    </div>
+    <div class="footer-content">
+
+    </div>
+    <div id="pagination">
+
+    </div>
+
+     <script type="module">
+        var currPage = 1;
+        var language = "en";
+        
+        // API Key : e5359e588b4435f8b102fd74ddf7d720
+        import { fetchData, showData, weather, weatherShow,fetchsearch,showResultsData } from "./main.js"
+        import {addFooter} from "./footer.js"
+        import Navbar from "./navbar.js"
+        let cont = document.getElementById("outer_navbar")
+        let navbar = Navbar()
+        cont.append(navbar)
+
+
+       let foot = document.querySelector(".footer-content");
+        // let foot = document.querySelector(".footer-content");
+        let footer = await addFooter();
+        foot.innerHTML = footer;
+
+
+
+        let date = document.getElementById("date")
+        let dt = new Date()
+        date.append(dt)
+        window.addEventListener("load", () => {
+           load()
+            let searchVal = document.getElementById("weatherButton")
+           searchVal.addEventListener("click", searchWeather)
+            
+            let searchBtn = document.getElementById("searchIcon")
+            searchBtn.addEventListener("click", handleSearch)
+
+            createPagination()
+            const pagination = document.getElementById("pagination")
+            pagination.addEventListener("click",handlePage)
+
+            let btnMore = document.getElementById("more");
+            btnMore.addEventListener("click",showHidden);
+            btnMore.addEventListener("dblclick",hide)
+
+           
+
+            let langDiv = document.getElementById("lang");
+            langDiv.addEventListener("click",changeLanguage)
+
+        })
+
+        let changeLanguage = async()=>{
+            try{
+                let lang = event.target.value;
+                language = lang
+                console.log(language)
+                handleSearch()
+            }
+            catch(err){
+                console.log(err)
+            }
+        }
+
+        let hide = ()=>{
+            let content = document.getElementById("lang")
+            content.style.display = "none"
+        }
+        let showHidden = ()=>{
+            let content = document.getElementById("lang")
+            content.style.display = "block";
+        }
+        let handlePage = async()=>{
+            try{
+                const pgnum = parseInt(event.target.name)
+                currPage = pgnum
+                let searchValue = document.getElementById("search").value;
+                let data = await fetchsearch({value:searchValue,page:currPage,language:language});
+                // console.log(currPage)
+                let container = document.getElementById("results")
+                container.innerHTML = null;
+                showResultsData(data,"results")
+                createPagination()
+            }
+            catch(err){
+                console.log(err)
+            }
+        }
+        const createPagination = ()=>{
+            const div = document.getElementById("pagination")
+            //div.style.display = "block";
+            div.innerHTML = null;
+
+            const prev = document.createElement("button")
+            prev.textContent = "Previous"
+            prev.name = currPage-1
+            if(currPage == 1){
+                prev.disabled = true
+            }
+
+            const current = document.createElement("button")
+            current.textContent = currPage
+            current.name = currPage
+
+            const next = document.createElement("button")
+            next.textContent = "Next"
+            next.name = currPage+1
+
+            div.append(prev,current,next)
+        }
+        let handleSearch = async() => {
+            var div = document.getElementById("pagination");
+            div.style.display = "block";
+            event.stopImmediatePropagation()
+            let cont = document.getElementById("cont")
+            cont.innerHTML = null;
+            let searchValue = document.getElementById("search").value;
+            // console.log(searchValue)
+            let results = document.createElement("div")
+            results.id = "results"
+            cont.append(results)
+            let data = await fetchsearch({value:searchValue,language:language})
+            showResultsData(data,"results")
+            
+        }
+        let load = () => {
+            box_1()
+            box_2()
+            box_3()
+            reelContainer()
+            box_5()
+            scienceContainer()
+            box_6()
+            box_7()
+        }
+        let box_1 = async () => {
+            try {
+                let container = document.getElementById("container_1")
+                let data = await fetchData({ category: "general", pageSize: 5})
+                // console.log(data)
+                showData(data, "container_1")
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+        let box_2 = async () => {
+            try {
+                let container = document.getElementById("container_2")
+                let data = await fetchData({ category: "general", pageSize: 4})
+                // console.log(data)
+                showData(data, "container_2")
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+        let box_3 = async () => {
+            try {
+                let container = document.getElementById("container_3")
+                let data = await fetchData({ category: "sports", pageSize: 4})
+                // console.log(data)
+                showData(data, "container_3")
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+
+        let searchWeather = async () => {
+            try {
+                let searchVal = document.getElementsByName("weather")[0].value;
+                let data = await weather({ query: searchVal })
+                // console.log(data)
+                weatherShow(data, "weatherResults")
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+
+        let reelContainer = async () => {
+            try {
+                let container = document.getElementById("reel_content")
+                let data = await fetchData({ category: "entertainment", pageSize: 3})
+                // console.log(data)
+                showData(data, "reel_content")
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+        let box_5 = async () => {
+            try {
+                let container = document.getElementById("container_4")
+                let data = await fetchData({ category: "business", pageSize: 4})
+                // console.log(data)
+                showData(data, "container_4")
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+        let scienceContainer = async () => {
+            try {
+                let container = document.getElementById("science_content")
+                let data = await fetchData({ category: "science", pageSize: 3})
+                // console.log(data)
+                showData(data, "science_content")
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+        let box_6 = async () => {
+            try {
+                let container = document.getElementById("container_5")
+                let data = await fetchData({ category: "health", pageSize: 4})
+                // console.log(data)
+                showData(data, "container_5")
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+
+        let box_7 = async () => {
+            try {
+                let container = document.getElementById("container_6")
+                let data = await fetchData({ category: "technology", pageSize: 4})
+                // console.log(data)
+                showData(data, "container_6")
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+
+    </script>
+</body>
+
+</html>

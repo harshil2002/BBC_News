@@ -1,0 +1,303 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+ #main{
+    
+     display: flex;
+     justify-content: center;
+ }
+ #nav_yellow{
+     background-color: rgba(254,210,49,255);
+     height: 10rem;
+     font-size: large;
+     font-weight: bold;
+     padding-top: 3rem;
+     padding-left: 3rem;
+     
+ }
+ 
+ #main_left{
+     width: 80%;
+     padding: 2rem;
+    
+    
+
+ }
+ #main_right{
+     width: 20%;
+ border-left: 1px solid grey;
+ }
+ .img_box{
+     width: 100%;
+     height:50%;
+     margin-bottom: 1rem
+     ;
+ }
+ #cont{
+     margin-top: 5rem;
+ }
+ #cont  > div{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+ }
+ #cont > div div {
+    /* border: 1px solid black;*/
+     width: 20%;
+     
+     padding: 1%;
+     margin: 1%;
+ }
+ #top{
+     width: 95%;
+     margin: auto;
+ }
+ #top > div {
+     display: flex;
+     
+     justify-content: space-around;
+     height: 30rem;
+     flex-wrap: wrap;
+     
+  
+
+ }
+
+ #top>div>.top_div:nth-child(1){
+     display: flex;
+     justify-content: center;
+
+      width: 80% ;
+     height: 100%;
+
+
+
+}
+#top>div>.top_div:nth-child(1) > img {
+margin-right: 10px;
+height: 100%;
+}
+#top > div >.top_div{
+
+width: 20%;
+height: 200px;
+
+
+}
+#top > div >.top_div > img {
+width: 100%;
+height: 80%;
+}
+
+#cont1  > div{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+ }
+ #cont1 > div div {
+    /* border: 1px solid black;*/
+     width: 20%;
+    
+     padding: 1%;
+     margin: 1%;
+ }
+ #cont2{
+     
+   
+     display: flex;
+     justify-content: space-between;
+     
+ 
+ }
+ #cont2_L{
+     width: 40%;
+
+  
+ }
+ #cont2_L > div > .boxes{
+     margin: 1rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     
+  
+     height: 100%;
+
+ }
+ #cont2_L > div > .boxes > img {
+     margin-bottom: 5rem;
+ }
+ #cont2_R{
+     width: 60%;
+   
+ }
+ #cont2_R  > div{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+ }
+ #cont2_R > div div {
+    /* border: 1px solid black;*/
+     width: 23%;
+   
+     padding: 2%;
+     margin: 2%;
+     margin-bottom: 7rem;
+ }
+
+
+
+ #cont3{
+     
+   
+     display: flex;
+     justify-content: space-between;
+     
+ 
+ }
+ #cont3_L{
+     width: 40%;
+
+  
+ }
+ #cont3_L > div > .boxes{
+     margin: 1rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     
+  
+     height: 100%;
+
+ }
+ #cont3_L > div > .boxes > img {
+     margin-bottom: 5rem;
+ }
+ #cont3_R{
+     width: 60%;
+   
+ }
+ #cont3_R  > div{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+ }
+ #cont3_R > div div {
+    /* border: 1px solid black;*/
+     width: 23%;
+     
+     padding: 2%;
+     margin: 2%;
+     margin-bottom: 9rem;
+ }
+ /*cont4*/
+ #cont4{
+     
+   
+     display: flex;
+     justify-content: space-between;
+     
+ 
+ }
+ #cont4_L{
+     width: 40%;
+
+  
+ }
+ #cont4_L > div > .boxes{
+     margin: 1rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     
+  
+     height: 100%;
+
+ }
+ #cont4_L > div > .boxes > img {
+     margin-bottom: 5rem;
+ }
+ #cont4_R{
+     width: 60%;
+   
+ }
+ #cont4_R  > div{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+ }
+ #cont4_R > div div {
+    /* border: 1px solid black;*/
+     width: 23%;
+    
+     padding: 2%;
+     margin: 2%;
+     margin-bottom: 7rem;
+ }
+ #last{
+     display: flex;
+     justify-content: space-between;
+ }
+ #logo{
+     width: 50%;
+     padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    
+ }
+ #logo > img {
+     width: 5rem;
+     height: 60px;
+ }
+
+ #last_m{
+     width: 20%;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     padding: 2rem;
+     
+ }
+ #last_m > img{
+     width: 25%;
+     height: 4rem;
+    
+ }
+ #last_r{
+     width: 30%;
+     padding: 2rem;
+    
+     
+ }
+ #main_right > div > .top_div{
+     display: flex;
+     margin: 2rem;
+
+   
+ }
+ #main_right > div > .top_div > img {
+     width: 50%;
+     height: 50%;
+     margin-right: 5%;
+ }
+
+ @media only screen and (min-width: 300px) and (max-width: 700px) {
+    html{
+        font-size: 35%;
+    }
+
+}
+@media only screen and (max-width: 300px) {
+    html{
+        font-size: 15%;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+

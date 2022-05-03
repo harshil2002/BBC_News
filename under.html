@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://logos-download.com/wp-content/uploads/2016/06/BBC_logo_black_background.png">
+    <title>BBC - Register-Sorry</title>
+    <link rel="stylesheet" href="./under.css">
+</head>
+<body>
+    <div id="container_signIn">
+        <div><br><br><br></div>
+        <div class="signIn_content">
+            <!-- <img class="logo" src="https://logos-download.com/wp-content/uploads/2016/06/BBC_logo_black_background.png"> -->
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/BBC.svg/1280px-BBC.svg.png">
+            <p>Register with the BBC</p>
+            <h1><strong>Sorry, only 16s and over can register.</strong></h1>
+            <button id="ok">OK</button>
+        </div>
+    </div>
+    <div id="footer">
+        <b class="content">Find Out more about BBC accounts</b>
+    </div>
+    <script>
+        window.addEventListener("load",()=>{
+            let btn = document.getElementById("ok");
+            btn.addEventListener("click",register)
+        })
+        let register = ()=>{
+            location.replace("./register.html")
+        }
+    </script>
+</body>
+</html>

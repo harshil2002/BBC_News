@@ -1,0 +1,72 @@
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif ;
+}
+#container_signIn {
+    width: 100%;
+    height: 750px;
+    background: url("https://ichef.bbci.co.uk/images/ic/800xn/p092shyv.jpg") no-repeat;
+    background-size: cover;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.logo {
+    width: 15%;
+    height: 30px;
+}
+.signIn_content {
+    width: 33%;
+    background: white;
+    margin-left: 190px;
+    padding: 25px;
+}
+#divBtn{
+    margin-top: 40px;
+    height: 60px;
+}
+#divBtn button{
+    height: 80%;
+    width: 47%;
+    margin: 1%;
+    color: white;
+    background-color: rgb(1, 109,238);
+    border: none;
+    font-size: 16px;
+}
+.more{
+    text-align: right;
+    margin-right: 10px;
+}
+#more{
+    background-color: white;
+    border: none;
+}
+#hiddenContent{
+    display: none;
+    overflow: hidden;
+    font-size: 14px;
+    text-align: center;
+}
+#footer{
+    background-color: rgb(76, 76,76);
+    color: #ffffff;
+    padding: 12px;
+    height: 30px;
+    /* font-size: 16px; */
+    /* font-weight: bolder; */
+}
+#footer>p{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    margin-left: 300px;
+    /* text-align:end; */
+}
+#footer a{
+    text-decoration: none;
+    border: none;
+    color: white !important;
+}

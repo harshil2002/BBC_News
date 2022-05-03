@@ -1,0 +1,107 @@
+.footer-content {
+    margin:0px;
+    background-image: url("https://assets.website-files.com/5e6c01bb5212506d6c119069/5e6edcb60f8bc32556bae915_footer-bg.png");
+    font-family: 'IBM Plex Sans',sans-serif;
+    color: #6f8093;
+    font-weight: 400;
+}
+.footer-content > div > ul{
+    display: grid;
+    background-image: url("https://assets.website-files.com/5e6c01bb5212506d6c119069/5e6edcb60f8bc32556bae915_footer-bg.png");
+    gap:5px;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-areas: 'id1 id2 id3 id4 id5';
+}
+#id1{grid-area: id1;}
+#id2{grid-area: id2;}
+#id3{grid-area: id3;}
+#id4{grid-area: id4;}
+#id5{grid-area: id5;}
+.footer-content > div{
+    padding:20px 40px;
+}
+.icons:hover{
+       background-color: hsla(0,0%,100%,.2);
+}
+#id1 > a >img{
+    width: 150px;
+    height: 23px;
+}
+.footer-content > div > p{
+     margin-top: 30px;
+     margin-bottom: 30px;
+     font-family: 'IBM Plex Sans',sans-serif;
+      color: #6f8093;
+}
+.footer-content h4{
+    font-family: 'IBM Plex Sans',sans-serif;
+    color: #6f8093;
+    margin-top: 0;
+    padding: 0;
+    font-weight: 400;
+ }
+ .footer-content a{
+      font-family: 'IBM Plex Sans',sans-serif;
+      color: rgb(217,219,221);
+      text-decoration: none;
+}
+.social-connects{
+    width:150px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto;
+}
+.social-connects > div{
+   width:40px;
+   border-radius: 50px;
+   height:40px;
+   background-color: hsla(0,0%,100%,.1);
+}
+.social-connects > div > a > img{
+    width: 22px;
+    height: 22px;
+    padding: 10px;
+}
+ul{
+    padding-left: 0;
+}
+li{
+    list-style: none;
+    padding: 10px 0px;
+}
+@media  screen and (max-width:650px) {
+    .footer-content{
+        grid-gap:20px;
+       /* padding:20px;*/
+        grid-template-columns: auto auto;
+        grid-template-areas: 'id1 id1'
+                             'id2 id3'
+                             'id4 id5';
+    }
+    .footer-content > div{
+        padding:10px;
+        text-align: left;
+    }
+    #id1{
+        text-align: center;
+    }
+    .social-connects{
+        grid-template-columns: auto auto auto;
+        padding-left: 35%;
+    }
+}
+@media only screen and (max-width:950px) and (min-width: 650px){
+    .footer-content{
+        grid-gap:10px;
+        grid-template-columns: auto auto auto auto;
+        grid-template-areas:   'id1 id1 id1 id1'
+                               'id2 id3 id4 id5';
+    }
+    #id1{
+        text-align: center;
+    }
+    .social-connects{
+        grid-template-columns: auto auto auto;
+        padding-left: 40%;
+    }
+}

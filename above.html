@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://logos-download.com/wp-content/uploads/2016/06/BBC_logo_black_background.png">
+    <title>BBC - Register</title>
+    <link rel="stylesheet" href="./above.css">
+</head>
+<body>
+    <div id="container_signIn">
+        <div><br><br><br></div>
+        <div class="signIn_content">
+            <!-- <img class="logo" src="https://logos-download.com/wp-content/uploads/2016/06/BBC_logo_black_background.png"> -->
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/BBC.svg/1280px-BBC.svg.png">
+            <h1> <strong>Register with the BBC</strong> </h1>
+            <form id="form">
+                <label>
+                    <p>Email</p>
+                </label>
+                <input type="email" name="email" placeholder="Email">
+                <label>
+                    <p>Password</p>
+                </label>
+                <input type="password" name="password" placeholder="Password">
+                <div id="rules">
+                    <p><strong>Passwords need to include...</strong> </p>
+                        <li>Eight or more characters</li>
+                        <li>At least one letter</li>
+                        <li>At least one number or symbol</li>
+                </div>
+                
+                <p class="terms">By clicking Register, you accept our <strong>Terms of Use.</strong> Find out about our<br>  <strong>Privacy and Cookies Policy.</strong> </p>
+                <button id="submit" type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        <p class="content">Already Got a BBC account?<a href="./signup.html"><strong>Sign In</strong></a></p>
+        <p>Find out more about BBC accounts</p>
+    </div>
+    <script>
+        window.addEventListener("load", () => {
+            const submitBtn = document.getElementById("submit")
+            submitBtn.addEventListener("click", formDataInput)
+        })
+        const formDataInput = async () => {
+            try {
+                event.preventDefault()
+                const form = document.getElementById("form")
+                const formData = new FormData(form)
+                const email = formData.get("email")
+                const password = formData.get("password")
+                // username = eve.holt@reqres.in
+                // pass = cityslicka
+                const userData = await loginFunc({ email, password })
+                console.log(userData)
+                if (userData.token) {
+                    window.location.replace("./signup.html")
+                }
+                else {
+                    alert("Missing email or password")
+                }
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+        const loginFunc = (data) => {
+            console.log(data)
+            const config = {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }
+            return fetch(`https://reqres.in/api/register`, config)
+                .then((res) => {
+                    return res.json()
+                })
+        }
+    </script>
+</body>
+</html>

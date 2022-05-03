@@ -1,0 +1,225 @@
+html, body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.welcome_date{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+}
+.welcome_date>h3{
+    color: rgb(72, 70, 73);
+}
+#date{
+    color: rgb(133, 130, 135);
+    font: 14px;
+    margin-top: 20px;
+    margin-left: auto;
+}
+#container_2,#container_3,#container_4,#container_5,#container_6{
+    display: flex;
+    flex-direction: column; 
+     width: 90%;
+     margin: auto
+}
+#container_1{
+    width: 89%;
+    margin: auto;
+}
+#container_1>div>.boxes:nth-child(1){
+    grid-area: first;
+    width: 95% !important;
+    height: 350px;
+    background-size: cover !important;
+}
+#container_1>div>.boxes:nth-child(2){
+    grid-area: second;
+}
+#container_1>div>.boxes:nth-child(3){
+    grid-area: third;
+}
+#container_1>div>.boxes:nth-child(4){
+    grid-area: fourth;
+}
+#container_1>div>.boxes:nth-child(5){
+    grid-area: fifth;
+}
+#container_1>.innerDiv{
+    display: grid;
+    grid-template: "first first second  third "
+                    "first first fourth   fifth"   
+}
+#container_1>div>.boxes{
+    display: grid; 
+    text-align: start;
+    width: 95%;
+    height: 170px;
+    background-size: cover !important;
+    margin: 0.5%;
+    padding: 3px;
+    color: white;
+}
+
+#container_1>div>.boxes:hover{
+    opacity: 0.5;
+    /* color: black !important; */
+}
+#news_section,#sport_section,#india_section,#health_section,#tech_section,#editor_pick{
+    width: 88%;
+    border-left: yellowgreen 4px solid;
+    height: 20px;
+    margin-top: 30px !important;
+    padding-left: 3px;
+    margin: auto; 
+}
+#sport_section{
+    border-left: lightcoral 4px solid;
+}
+#india_section{
+    border-left: orange 4px solid;
+}
+#health_section{
+    border-left: lightseagreen 4px solid ;
+}
+#tech_section{
+    border-left: blueviolet 4px solid;
+}
+#editor_pick{
+    border-left: greenyellow 4px solid;
+}
+.section{
+    width: 23%;
+    margin: 1%;
+}
+.section>img{
+    width: 100%;
+    height: 150px;
+}
+.section:hover{
+    transform: scale(1.2);
+}
+#weather{
+    width: 88%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+#weather>input,#weather>button{
+    border: 1px solid slateblue;
+    border-radius: 5px;
+    height: 30px;
+    margin: 0px;
+    padding: 3px;
+}
+#weather>button{    
+    width: 50px;
+}
+#weatherResults{
+    background: whitesmoke;
+}
+#weatherResults>p,#weatherResults>img{
+    padding: 0px;
+    margin: 0px;
+}
+#weatherResults>img{
+    height: 30px;
+}
+#reel,#science{
+    width: 100%;
+    background: url("https://jooinn.com/images1280_/photography-of-trees-covered-with-snow-4.jpg");
+    height: 450px;
+    font-size: 18px;
+    color: white;
+    padding: 5px;   
+}
+#science{
+    background: url("https://c4.wallpaperflare.com/wallpaper/908/576/938/nature-landscape-mountains-trees-wallpaper-preview.jpg") center;
+    background-size: cover;
+}
+#reel>h4,#reel>p,#science>p,#science>h4{
+    margin-left: 100px;
+}
+
+#reel_content,#science_content{
+    width: 100%;
+    /* padding-left: 20px; */
+}
+.unique{
+    direction: flex;
+    flex-direction: row;
+    width: 28%;
+    margin: 1.2%;
+    justify-content: space-evenly;
+    
+}
+.unique>img{
+    width: 90%;
+    height: 200px;
+}
+.innerDiv{
+    display: flex;
+    justify-content: space-evenly;
+}
+.cards{
+    width: 80%;
+    margin: 1%;
+    margin: auto;
+    background-color: rgb(171, 200, 245);
+    padding: 2%;
+    height: 300px;
+    /* display: inline; */
+}
+#results{
+    margin-top: 50px;
+}
+#resultsInnerDiv{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 2%;
+}
+.cards>img{
+    width: 40%;
+    float: left;
+    /* display: inline; */
+    padding-right: 15px;
+    height: 100%;
+}
+#pagination{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: none;
+}
+#pagination>button{
+    width: 31%;
+    border: none;
+    margin: 1%;
+    text-decoration: none;
+    height: 40px;
+    color: white;
+    background-color: black;
+    font-size: 17px;
+}
+#pagination>button:hover{
+    color: black;
+    background-color: greenyellow;
+}
+
+
+@media only screen and (min-width: 300px) and (max-width: 900px) {
+    #reel,#science{
+        font-size: 14px;
+    }
+    #pagination>button{
+        font-size: 14px;
+    }
+
+}
+
+
